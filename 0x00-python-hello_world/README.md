@@ -1,1 +1,1 @@
-0x00 pytho hello world - introduction to python
+0x00 python hello world - introduction to python 
