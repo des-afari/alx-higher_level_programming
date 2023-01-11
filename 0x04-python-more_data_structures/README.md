@@ -1,6 +1,6 @@
-0x04
 data structures
-map
+maps
 lambda
-dictionaries
 sets
+dictionaries
+
