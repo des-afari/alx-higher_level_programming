@@ -68,6 +68,7 @@ class Node:
         else:
             self.__next_node = value
 
+
 class SinglyLinkedList:
     """
     SiglyLinkedList defines the singly linked list
