@@ -1,1 +1,1 @@
-0x06 python and classes
+0x06 python classes
