@@ -1,26 +1,31 @@
 #!/usr/bin/python3
-"""
-    Text Indention module
-    """
-
 
 def text_indentation(text):
-    """
-    print text
-    2 new lines after each of these characters: ., ? and :
+    """Function that prints text with 2 new lines after each of the \
+characters '.',',', and '?' :
+
     Args:
-        text (str): text
-    Raise
-        TypeError: when text is not str
+        text (str): text to be edited
+
     """
     if type(text) is not str:
-        raise TypeError("text must be a string")
-    a = 0
-    while a < len(text):
-        if text[a] in [':', '.', '?']:
-            print(text[a])
-            print()
-            a += 1
+        raise TypeError('text must be a string')
+
+    j = 0
+    delims = '.?:'
+
+    for i, char in enumerate(text):
+        for delim in delims:
+            if char is delim:
+                j += 1
+                text = text[:i + j] + ' ' + text[i + j:]
+
+    list = text.split()
+
+    for word in list:
+        if word[-1:] is "." or word[-1:] is "?" or word[-1:] is ":":
+            print(word, end="\n\n")
+        elif word is list[len(list) - 1]:
+            print(word, end="")
         else:
-            print(text[a], end='')
-        a += 1
+            print(word, end=" ")
