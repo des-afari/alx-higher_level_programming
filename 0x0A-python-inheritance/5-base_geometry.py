@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""
+     Class for BaseGeometry
+"""
+
 
 class BaseGeometry:
-    """Intentionally empty class.
-
-    """
+    """Defines base class"""
     pass

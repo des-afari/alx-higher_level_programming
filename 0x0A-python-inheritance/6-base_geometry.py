@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+"""
+     Class for BaseGeometry
+"""
+
 
 class BaseGeometry:
-    """Intentionally empty area() method.
+    """Defines base class"""
 
-    """
     def area(self):
-        """Unimplemented, only raises exception to notify user.
-
-        """
-        raise Exception('area() is not implemented')
+        """Not implemented"""
+        raise Exception("area() is not implemented")

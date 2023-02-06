@@ -1,18 +1,13 @@
 #!/usr/bin/python3
+"""
+     Class for MyInt
+"""
+
 
 class MyInt(int):
-    """Custom int type inverting behavior of != and == operators.
+    """Defines base class"""
 
-    """
-
-    def __eq__(self, other):
-        """Reverses behavior of == operator.
-
-        """
-        return int(self) != int(other)
-
-    def __ne__(self, other):
-        """Reverses behavior of != operator.
-
-        """
-        return int(self) == int(other)
+    def __init__(self, int):
+        """Instantiation"""
+        super().__init__()
+        self.int = int
