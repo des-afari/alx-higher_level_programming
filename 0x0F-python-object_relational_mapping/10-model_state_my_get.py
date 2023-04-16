@@ -1,21 +1,28 @@
 #!/usr/bin/python3
-"""State from database by name
+"""Prints State object id with name passed in as arg
 """
-
-from sys import argv
-from sqlalchemy import create_engine
+import sys
 from model_state import Base, State
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import exists
 
-if __name__ == '__main__':
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
-                           .format(argv[1], argv[2], argv[3]))
-
+if __name__ == "__main__":
+    """ Engine connection
+    """
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1], sys.argv[2],
+                                   sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    Session = sessionmaker(engine)
+    """ Session handling
+    """
+
+    Session = sessionmaker(bind=engine)
     session = Session()
 
+    """ Query
+    """
     if "'" not in sys.argv[4]:
         check = session.query(State).filter_by(name=sys.argv[4]).scalar()
         if check is None:
@@ -23,6 +30,6 @@ if __name__ == '__main__':
         else:
             query = session.query(State).filter_by(name=sys.argv[4])
             for row in query.all():
-                print(f"{row.id}")
+                print("{}".format(row.id))
 
     session.close()
