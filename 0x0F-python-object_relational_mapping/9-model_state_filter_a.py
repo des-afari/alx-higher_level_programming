@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" fetch first row from states table"""
+"""State from database containing "a"
+"""
 
 from sys import argv
 from sqlalchemy import create_engine
@@ -15,12 +16,9 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
-
-    if not state:
-        print('Nothing')
-
-    else:
+    for state in session.query(State)\
+                        .filter(State.name.like('%a%'))\
+                        .order_by(State.id):
         print(f"{state.id}: {state.name}")
 
-    session.close()
+        session.close()
