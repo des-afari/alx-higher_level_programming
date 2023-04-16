@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" fetch all from state table"""
+""" fetch all from state table
+"""
 
 from sys import argv
 from sqlalchemy import create_engine
@@ -7,7 +8,7 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == '__main__':
-    engine = create_engine("mysql_mysqldb://{}:{}@localhost:3306/{}"
+    engine = create_engine("mysql_mysqldb://{}:{}@localhost/{}"
                            .format(argv[1], argv[2], argv[3]))
 
     Base.metadata.create_all(engine)
@@ -16,5 +17,5 @@ if __name__ == '__main__':
     session = Session()
 
     for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+        print(f"{state.id}: {state.name}")
         session.close()
