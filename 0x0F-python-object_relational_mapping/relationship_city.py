@@ -1,21 +1,14 @@
 #!/usr/bin/python3
-"""0x0F. Python - Object-relational mapping - task 15. City relationship
+""" City class model
 """
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.schema import ForeignKey
 from relationship_state import Base
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 
 class City(Base):
-    """Defines ORM class for table `cities`, with 3 columns:
-
-       `id` (Column): unique identifier, primary key
-       `name` (Column): name of city
-       `state_id` (Column): integer, foreign key `states.id`
-
+    """ City class inherits Base sqlalchemy call
     """
     __tablename__ = 'cities'
-    id = Column(Integer, autoincrement=True, unique=True,
-                nullable=False, primary_key=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128))
+    state_id = Column(Integer, ForeignKey('states.id'))

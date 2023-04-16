@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Creates State and City for hbtn_0e_100_usa database
 """
