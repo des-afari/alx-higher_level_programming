@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Adds State object "Louisiana" to hbtn_0e_6_usa database"""
+"""Change name by id"""
 
 import sys
 from model_state import Base, State
@@ -21,13 +21,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = State(name='Louisiana')
-    session.add(state)
+    state = session.query(State).filter(State.id == 2).first()
 
-    query = session.query(State).filter_by(name='Louisiana')
-    for row in query.all():
-        print(f"{row.id}")
-
+    state.name = 'New Mexico'
     session.commit()
 
     session.close()
