@@ -1,20 +1,18 @@
 #!/usr/bin/python3
-"""First state model"""
-
-from sqlalchemy import Column, Integer, String, create_engine
+""" State class model
+"""
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+""" State class
+"""
+
 
 class State(Base):
-    """State class inheriting from Base"""
+    """ State class inherits Base sqlalchemy call
+    """
     __tablename__ = 'states'
-
-    id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    name = Column(String(128), nullable=False)
-
-    def __init__(self, id, name){
-        self.id = id
-        self.name = name
-    }
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128))
