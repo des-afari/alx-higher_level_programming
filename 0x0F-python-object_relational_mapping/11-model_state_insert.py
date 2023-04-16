@@ -21,7 +21,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = State(name='Lousiana')
+    state = State(name='Louisiana')
     session.add(state)
 
     query = session.query(State).filter_by(name='Louisiana')
