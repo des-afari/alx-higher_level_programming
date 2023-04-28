@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""0x11. Python - Network #1, task 9. My Github!
+"""
+    Get guthub id
 """
 
 if __name__ == "__main__":
