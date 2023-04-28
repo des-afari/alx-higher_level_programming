@@ -1,14 +1,13 @@
-#!/bin/bash/python3
-"""request using urllib"""
+#!/usr/bin/python3
+"""0x11. Python - Network #1, task 0. What's my status? #0
+"""
 
-if __name__ == '__main__':
-    from urllib.request import urlopen
+if __name__ == "__main__":
+    from urllib import request
 
-
-    with urlopen('https://alx-intranet.hbtn.io/status') as response:
+    with request.urlopen('https://intranet.hbtn.io/status') as response:
         html = response.read()
-
     print('Body response:')
-    print(f"\t- type: {type(html)}")
-    print(f"\t- content: {html}")
-    print(f"\t- utf8 content: {html.decode('utf-8')}")
+    print('\t- type: {}'.format(type(html)))
+    print('\t- content: {}'.format(html))
+    print('\t- utf8 content: {}'.format(html.decode('utf-8')))
