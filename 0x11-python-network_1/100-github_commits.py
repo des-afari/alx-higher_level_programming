@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""0x11. Python - Network #1, task 10. Time for an interview!
+"""
+    Time for an interview!
 """
 
 if __name__ == "__main__":
