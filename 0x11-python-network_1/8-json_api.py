@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""0x11. Python - Network #1, task 8. Search API
+"""
+    Search API
 """
 
 if __name__ == "__main__":
