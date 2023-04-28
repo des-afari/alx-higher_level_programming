@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""0x11. Python - Network #1, task 7. Error code #1
+"""
+    Error code
 """
 
 if __name__ == "__main__":
