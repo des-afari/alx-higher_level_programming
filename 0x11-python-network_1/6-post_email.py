@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""0x11. Python - Network #1, task 6. POST an email #1
+"""
+    POST an email
 """
 
 if __name__ == "__main__":

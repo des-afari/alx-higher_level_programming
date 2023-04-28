@@ -4,8 +4,8 @@
 """
 
 if __name__ == "__main__":
-    import requests
+    from requests import get
     from sys import argv
 
-    response = request.get(argv[1])
+    response = get(argv[1])
     print(response.headers.get('x-request-id'))
