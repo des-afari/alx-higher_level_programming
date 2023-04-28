@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Search API
+    Search JSON API
 """
 
 if __name__ == "__main__":
